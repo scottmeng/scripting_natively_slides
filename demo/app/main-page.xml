@@ -15,11 +15,14 @@
       <TabViewItem title="content">
         <TabViewItem.view>
         	<StackLayout>
-        		<Label text="this is content"/>
-          	<Button text="add item" tap="{{ addItem }}"/>
+        		<Label text="{{ status }}"/>
+          	<Button text="fetch" tap="{{ fetchMyTweets }}"/>
         		<ListView items="{{ items }}">
         			<ListView.itemTemplate>
-        				<Label text="{{ content }}"/>
+        				<StackLayout orientation="horizontal" cssClass="item">
+                  <Label text="{{ content }}" textWrap="true" width="300"/>
+                  <Image src="{{ img }}"/>
+                </StackLayout>
         			</ListView.itemTemplate>
         		</ListView>
         	</StackLayout>
