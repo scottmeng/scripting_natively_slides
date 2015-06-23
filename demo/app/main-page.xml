@@ -1,30 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <TabView>
-    <TabView.items>
-      <TabViewItem title="welcome">
-        <TabViewItem.view>
-          <ScrollView>
-            <StackLayout>
-              <Label text="{{ status }}" cssClass="title"/>
-              <!-- <Image src="http://www.saawinternational.org/cow2.jpg"/> -->
-              <Button text="TAP" tap="{{ tapAction }}" />
-              <Button text="Go to list page" tap="{{ navToList }}"/>
-              <Button text="Fetch" tap="{{ fetchTweets }}"/>
-              <Label text="{{ message }}" cssClass="message" textWrap="true"/>
-              <ListView items="{{ tasks }}" row="1">
-                <ListView.itemTemplate>
-                  <Label text="{{ name }}" cssClass="item"/>
-                </ListView.itemTemplate>
-              </ListView>
-            </StackLayout>
-          </ScrollView>
-        </TabViewItem.view>
-      </TabViewItem>
-      <TabViewItem title="content">
-        <TabViewItem.view>
-          <Label text="this is content"/>
-        </TabViewItem.view>
-      </TabViewItem>
-    </TabView.items>
-  </TabView>
+  <StackLayout>
+    <Label text="Tap the button" cssClass="title"/>
+    <Button text="TAP" tap="{{ tapAction }}" />
+    <Label text="{{ message }}" cssClass="message" textWrap="true"/>
+  </StackLayout>
 </Page>

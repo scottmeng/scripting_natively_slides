@@ -59,7 +59,6 @@ function buildJavaOptions(options) {
         javaOptions.method = options.method;
     }
     if (options.content) {
-        console.log("content is : " + options.content);
         javaOptions.content = options.content;
     }
     if (types.isNumber(options.timeout)) {
