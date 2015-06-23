@@ -8,6 +8,7 @@ var __extends = this.__extends || function (d, b) {
 // modules
 var observable = require("data/observable");
 var observableArray = require('data/observable-array');
+var frameModule = require("ui/frame");
 
 
 var HelloWorldModel = (function (_super) {
@@ -35,6 +36,15 @@ var HelloWorldModel = (function (_super) {
         this.items.push({
             'name': 'item',
             'content': this.items.length
+        });
+    };
+
+    HelloWorldModel.prototype.jumpAway = function() {
+        frameModule.topmost().navigate({
+            moduleName: "second-page",
+            context: {
+                'content': this.counter
+            }
         });
     };
 

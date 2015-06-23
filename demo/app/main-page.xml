@@ -6,7 +6,7 @@
           <ScrollView>
             <StackLayout>
               <Button text="TAP" tap="{{ tapAction }}" />
-              <Button text="Fetch" tap="{{ fetchTweets }}"/>
+              <Button text="Jump" tap="{{ jumpAway }}"/>
               <Label text="{{ message }}" cssClass="message" textWrap="true"/>
             </StackLayout>
           </ScrollView>

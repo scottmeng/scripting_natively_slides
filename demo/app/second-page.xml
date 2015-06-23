@@ -1,0 +1,6 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="pageNavigatedTo">
+    <StackLayout>
+        <Label text="welcome to second page" cssClass="title"/>
+        <Label text="{{ content }}" cssClass="title"/>
+    </StackLayout>
+</Page>
