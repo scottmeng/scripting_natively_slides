@@ -1,7 +1,30 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" cssClass="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>
-  </StackLayout>
+	<TabView>
+		<TabView.items>
+			<TabViewItem title="welcome">
+        <TabViewItem.view>
+          <ScrollView>
+            <StackLayout>
+              <Button text="TAP" tap="{{ tapAction }}" />
+              <Button text="Fetch" tap="{{ fetchTweets }}"/>
+              <Label text="{{ message }}" cssClass="message" textWrap="true"/>
+            </StackLayout>
+          </ScrollView>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="content">
+        <TabViewItem.view>
+        	<StackLayout>
+        		<Label text="this is content"/>
+          	<Button text="add item" tap="{{ addItem }}"/>
+        		<ListView items="{{ items }}">
+        			<ListView.itemTemplate>
+        				<Label text="{{ content }}"/>
+        			</ListView.itemTemplate>
+        		</ListView>
+        	</StackLayout>
+        </TabViewItem.view>
+      </TabViewItem>
+		</TabView.items>
+	</TabView>
 </Page>

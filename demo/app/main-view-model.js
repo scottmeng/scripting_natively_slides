@@ -4,14 +4,23 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+
+// modules
 var observable = require("data/observable");
+var observableArray = require('data/observable-array');
+
+
 var HelloWorldModel = (function (_super) {
     __extends(HelloWorldModel, _super);
+    
     function HelloWorldModel() {
         _super.call(this);
         this.counter = 42;
+        this.items = new observableArray.ObservableArray([]);
+        this.set("items", this.items);
         this.set("message", this.counter + " taps left");
     }
+
     HelloWorldModel.prototype.tapAction = function () {
         this.counter--;
         if (this.counter <= 0) {
@@ -21,6 +30,14 @@ var HelloWorldModel = (function (_super) {
             this.set("message", this.counter + " taps left");
         }
     };
+
+    HelloWorldModel.prototype.addItem = function() {
+        this.items.push({
+            'name': 'item',
+            'content': this.items.length
+        });
+    };
+
     return HelloWorldModel;
 })(observable.Observable);
 exports.HelloWorldModel = HelloWorldModel;
